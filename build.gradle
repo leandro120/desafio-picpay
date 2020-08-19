@@ -1,0 +1,27 @@
+import com.picpay.desafio.android.gradleconfig.*
+
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://maven.fabric.io/public' }
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath Libs.Tools.gradle
+        classpath Libs.Plugins.kotlin
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
